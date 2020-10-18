@@ -1,8 +1,8 @@
 #include "Person.h"
 
-Person::Person(int id, int age, const string &name) : Id(id), Age(age), Name(name) {}
-
 Person::Person() {}
+
+Person::Person(int id, int age, const string &name) : Id(id), Age(age), Name(name) {}
 
 Person::~Person() {}
 
@@ -32,8 +32,7 @@ void Person::setName(const string &name) {
 
 std::string Person::toString() const {
     std::ostringstream output;
-    output << "<< Person Information>>\n"
-           << "Id: " << getId()
+    output << "Id: " << getId()
            << ", Age: " << getAge()
            << ", Name: " << getName();
     return output.str();
