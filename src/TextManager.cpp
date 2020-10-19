@@ -4,8 +4,7 @@ void TextManager::save(Person person) {
     ofstream archive;
     try { archive.open("TextFile.txt", ios::app); }
     catch (std::ifstream::failure txt) { throw std::runtime_error("Error "); }
-    archive << "\t<<Person List>>\n";
-    archive << person.toString();
+    archive << person.toString()<<endl;
     archive.close();
 }
 
