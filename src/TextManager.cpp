@@ -1,6 +1,6 @@
-#include "TextSave.h"
+#include "TextManager.h"
 
-void TextSave::save(Person person) {
+void TextManager::save(Person person) {
     ofstream archive;
     try { archive.open("TextFile.txt", ios::app); }
     catch (std::ifstream::failure txt) { throw std::runtime_error("Error "); }
@@ -9,7 +9,7 @@ void TextSave::save(Person person) {
     archive.close();
 }
 
-string TextSave::load(const Person &person) {
+string TextManager::load(const Person &person) {
     string text;
     ifstream archive;
     try { archive.open("TextFile.txt", ios::in); }

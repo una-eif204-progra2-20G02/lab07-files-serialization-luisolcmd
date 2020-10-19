@@ -1,6 +1,6 @@
-#include "BinarySave.h"
+#include "BinaryManager.h"
 
-void BinarySave::save(Person person) {
+void BinaryManager::save(Person person) {
     ofstream archive;
     try { archive.open("BinaryFile.dat", ios::app | ios::binary); }
     catch (std::ifstream::failure dat) { throw std::runtime_error("Error "); }
@@ -8,7 +8,7 @@ void BinarySave::save(Person person) {
     archive.close();
 }
 
-string BinarySave::load(const Person &person) {
+string BinaryManager::load(const Person &person) {
     ifstream archive;
     try { archive.open("BinaryFile.dat", ios::in | ios::binary); }
     catch (std::ifstream::failure dat) { throw std::runtime_error("Error "); }
