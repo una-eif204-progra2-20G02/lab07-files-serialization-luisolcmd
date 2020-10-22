@@ -1,14 +1,11 @@
 #ifndef LAB07_FILES_SERIALIZATION_BINARYMANAGER_H
 #define LAB07_FILES_SERIALIZATION_BINARYMANAGER_H
 
-#include "ISavePerson.h"
-#include "ILoadPerson.h"
+#include "ISaveData.h"
 
-struct BinaryManager : public ISavePerson, public ILoadPerson {
+struct BinaryManager : public ISaveData {
 public:
-    void save(Person person) override;
-
-    string load(const Person &person) override;
+    void save(string data) override;
 };
 
 #endif //LAB07_FILES_SERIALIZATION_BINARYMANAGER_H

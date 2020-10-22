@@ -1,14 +1,14 @@
 #ifndef LAB07_FILES_SERIALIZATION_TEXTMANAGER_H
 #define LAB07_FILES_SERIALIZATION_TEXTMANAGER_H
 
-#include "ISavePerson.h"
-#include "ILoadPerson.h"
+#include <../lib/nlohmann/json.hpp>
+#include "ISaveData.h"
 
-struct TextManager : public ISavePerson, public ILoadPerson {
+using nlohmann::json;
+
+struct TextManager : public ISaveData {
 public:
-    void save(Person person) override;
-
-    string load(const Person &person) override;
+    void save(string data) override;
 };
 
 #endif //LAB07_FILES_SERIALIZATION_TEXTMANAGER_H

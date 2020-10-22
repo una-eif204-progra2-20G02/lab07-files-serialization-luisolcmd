@@ -1,9 +1,19 @@
 #include "PersonManager.h"
 
-void PersonManager::save(ISavePerson *iSavePerson, Person person) {
-    iSavePerson->save(person);
+void PersonManager::save(ISaveData *iSavePerson, string data) {
+    iSavePerson->save(data);
 }
 
-string PersonManager::load(ILoadPerson *iLoadPerson, const Person &person) {
-    return iLoadPerson->load(person);
+void to_json(json &_json, const Person &person) {
+    _json = json{
+            {"ID: ",   person.getId()},
+            {"Age: ",  person.getAge()},
+            {"Name: ", person.getName()},
+    };
+}
+
+string PersonManager::serialize(const vector<Person> &personList) {
+    json jsonData(personList);
+    string jsonArray = jsonData.dump(4);
+    return jsonArray;
 }
