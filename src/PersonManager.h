@@ -11,7 +11,7 @@ class PersonManager {
 public:
     void save(ISaveData *iSavePerson, string data);
 
-    string load(ILoadPerson *iLoadPerson, const Person &person);
+    static string serialize(const vector<Person> &personList);
 };
 
 #endif //LAB07_FILES_SERIALIZATION_PERSONMANAGER_H
