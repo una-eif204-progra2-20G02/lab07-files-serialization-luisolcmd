@@ -14,6 +14,6 @@ void to_json(json &_json, const Person &person) {
 
 string PersonManager::serialize(const vector<Person> &personList) {
     json jsonData(personList);
-    string jsonArray = jsonData.dump(4);
+    string jsonArray = jsonData.dump();
     return jsonArray;
 }
